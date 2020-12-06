@@ -27,13 +27,15 @@ class NBodySimulator():
         Run N-body simulation using the provided methods to calculate forces and integrate.
 
         Parameters
-        ==========
-        masses :     Array of masses of the bodies.
-        pos :      Array of vector starting positions (numpy arrays).
-        velocity : Array of vector velocities (numpy arrays). This or p must be given.
-        p :        Array of vector momenta (numpy arrays). This or velocity must be given.
-        time_max : Time to iterate up to in seconds. Defaults to 10^9.
-        dt :       Time increment per loop in seconds. Defaults to 10^5.
+        ===========
+        masses      : Array of masses of the bodies.
+        pos         : Array of vector starting positions (numpy arrays).
+        velocity    : Array of vector velocities (numpy arrays). This or p must be given.
+        p           : Array of vector momenta (numpy arrays). This or velocity must be given.
+        time_max    : Time to iterate up to in seconds. Defaults to 10^9.
+        dt          : Time increment per loop in seconds. Defaults to 10^5.
+        G           : Gravitational constant. Defaults to the natural value ~6.67E-11.
+        return_info : If True: function returns (positions, E, P, time_tot). Default is False.
         """
         t0 = time.perf_counter()
         num_bodies = len(masses)
